@@ -7,23 +7,142 @@
     <meta name="google-site-verification" content="IU4l0FKiSfEg3f2W-pYicXegw9J-2SK4MkKoOTlu4ts" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5508163890008954"
      crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: "Sofia", sans-serif;
+            background: #fff27e;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .h1, h1{
+            margin: auto;
+            text-align: center;
+        }
+
+        ::selection{
+            background: transparent;
+        }
+
+        h4{
+            font-size: 26px;
+            line-height: 1px;
+            font-family: "Sofia", sans-serif;
+            color: #d041ff;
+            text-shadow: 0px 0px 10px #d041ff;
+        }
+
+        .card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 400px;
+            background: #fdf39ceb;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) perspective(2000px);
+            box-shadow: inset 300px 0 50px rgba(0, 0, 0, .2), 20px 0 60px rgba(0, 0, 0, .2);
+            transition: 2s;
+        }
+
+        .card:hover {
+            transform: translate(-50%, -50%) perspective(2000px) /*rotate(10deg) scale(1.2)*/;
+            box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+        }
+
+        .card:before{
+            content:'';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #fdf39ceb;
+            transform-origin: bottom;
+            transform: skewX(-45deg);
+        }
+
+        .card:after{
+            content:'';
+            position: absolute;
+            top: 0;
+            right: -5px;
+            width: 5px;
+            height: 100%;
+            background: #fdf39ceb;
+            transform-origin: left;
+            transform: skewY(-45deg);
+        }
+
+        .card .imgBox{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-origin: left;
+            transition: .7s;
+        }
+
+        .card .bark{
+            position: absolute;
+            background: #fdf39ceb;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: .7s;   
+        }
+
+        .card .imgBox img{
+            min-width: 250px;
+            max-height: 400px;
+        }
+
+        .card:hover .imgBox{
+            transform: rotateY(-135deg);
+        }
+
+        .card:hover .bark{
+            opacity: 1;
+            transition: .6s;
+            box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+        }
+
+        .card .details{
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 0 10px 0 10px;
+            z-index: -1;
+            margin-top: 10px;
+        }
+
+        .card .details p{
+            text-align: center;
+            padding: 0 opx 0 10px;
+        }
+
+        .card .details h4{
+            text-align: center;
+            padding: 0 25px 0 45px;
+        }
+
+        .text-right{
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
-    
-    <div id="peticion">Eres una linda amistad espero esto dure por siempre</div>
-    <div id="peti">Toca a Kuromi</div>
-    <img src="entrar.gif" alt="desiciones-si" id="sin">
-    <p id="cion">comparte con 15 amigos favortos antes de 24 horas o perderas a todos tus amigos</p>
-    <div id="carta">
-        <div class="hoja one">
-            <h2>Se te Quiere</h2>
-            <img src="kuromicard.gif" alt="kuromi-feliz" class="img">
+    <div class="h1"><h1>TOCA LA CARTA</h1></div>
+    <div class="card">
+        <div class="imgBox">
+            <div class="bark"></div>
+            <a href="card"><img src="R.gif" style="width: 100%; height: 100%;"></a>
         </div>
-        <div class="hoja two">
-            <h1>Gracias</h1>
-            <p> Gracias por ser mi amistad favorita</p>
-            <p> Tus palabras siempre me reconfortan y tus consejos son invaluables. Tu apoyo incondicional me ha dado fuerzas en momentos difíciles y me has inspirado a convertirme en una mejor versión de mí mism@</p>
-            <p> Solo quería tomarme un momento para recordarte lo especial que eres para mí</p>
+        <div class="details">
+            <h4 class="color1"><span>Felix Dia</span></h4>
+            <h4 class="color2 margin"><span>Madre Hermosa</span></h4>
+            <p>Querida Madre:</p>
+            <p>Tu amor incondicional ha sido mi refugio durante todos estos años. Has estado ahí para mí en cada paso del camino, apoyándome y animándome a seguir adelante. Tu cariño y ternura son un regalo invaluable que atesoro en lo más profundo de mi corazón.</p>
         </div>
     </div>
 
