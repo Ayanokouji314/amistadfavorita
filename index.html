@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hojas de un libro</title>
+    <style>
+    @font-face {
+        font-family: 'MyFont';
+        src: url('./cursiva.ttf');
+    }
+    body {
+        font-family: 'MyFont';
+        background-color: #f1e3d3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        text-rendering: optimizeLegibility; /* Mejora la legibilidad del texto */
+        -webkit-font-smoothing: antialiased; /* Suaviza las fuentes en WebKit */
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* Estilos para el libro */
+    .card {
+        color: #18093b;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 400px;
+        transform-style: preserve-3d;
+        transform: translate(-50%,-50%) perspective(2000px);
+        box-shadow: inset 300px 0 50px rgba(0,0,0,.2), 20px 0 60px rgba(0,0,0,.2);
+        transition: 2s;
+        display: block;
+    }
+    .details {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        padding: 1.5em;
+        margin: auto;
+        position: absolute;
+        transition: 2s ease;
+        transform-origin: left;
+        text-align: center;
+    }
+
+    #details {
+        z-index: 100; 
+        background-image: url("Portada.png"); 
+        background-size: 100% 99.9%; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        image-rendering: crisp-edges;
+    }
+
+    #details2 {z-index: 99; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details3 {z-index: 98; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details4 {z-index: 97; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details5 {z-index: 96; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details6 {z-index: 95; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details7 {z-index: 94; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9); line-height: 1.5em;}
+    #details8 {z-index: 93; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details9 {z-index: 92; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9); line-height: 1.5em;}
+    #details10 {z-index: 91; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+    #details11 {z-index: 91; background: radial-gradient(circle, #ffebe9, #FFFFFF, #ffebe9);}
+
+    .details::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: radial-gradient(#ffebe9, #FFFFFF, #ffebe9);
+        transition: opacity 2s ease;
+        backface-visibility: hidden;
+    }
+
+    .details.rotada::after {
+        opacity: 1; 
+    }
+
+    p{
+        text-align: center;
+        font-size: 1.5em;
+        text-overflow: ellipsis;
+        white-space: break-word;
+    }
+
+    #buttonContainer {
+        display: none;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body> 
+    <div class="card" id="card">
+        <div class="details" id="details" onclick="cambiarHoja()"></div> 
+        <div class="details" id="details2" onclick="cambiarHoja()">
+            <h1>El Jardín</h1>
+            <p>El Jardín de mis sueños, florecen pensamientos de ti como rosas que brotan y llenan mi corazon de dulzura.. </p>
+        </div>
+        <div class="details" id="details3" onclick="cambiarHoja()">
+            <h1>Tu Gran Belleza</h1>
+            <p>"Diría que al ver el sol y las estrellas no son bellas, por que al verte  veo algo más hernoso que ellas"</p>
+        </div>
+        <div class="details" id="details4" onclick="cambiarHoja()">
+            <h1>Me Gustas</h1>
+            <p>"Como pretendes que no me enamore de ti, si tienes el encanto de un ángel y la tentación de un demonio."</p>
+        </div>
+        <div class="details" id="details5" onclick="cambiarHoja()">
+            <h1>Mi tranquilidad</h1>
+            <p>"Contigo he encontrado algo más que amor, he encontrado mi hogar, donde mi ser se siente completo y mi realidad parece un sueño"</p>
+        </div>
+        <div class="details" id="details6" onclick="cambiarHoja()">
+            <h1>Mi Felicidad</h1>
+            <p>"Tu presencia en mi vida ha desatado una felicidad que nunca imaginé. Cada momento contigo es un rayo de sol que ilumina mi mundo y llena mi corazón de alegría indescriptible."</p>
+        </div>
+        <div class="details" id="details7" onclick="cambiarHoja()">
+            <h1>Al principio</h1>
+            <p>"Al principio, no significabas mucho en mi vida, pero con cada segundo que hemos compartido, te has convertido en alguien sumamente especial. Hoy, mis sentimientos por ti son verdaderos y profundos, nacidos de momentos y experiencias que solo tú has sabido crear."</p>
+        </div>
+        <div class="details" id="details8" onclick="cambiarHoja()">
+            <h1>Necesitas Saber</h1>
+            <p>Si supieras cómo florece mi alma con cada palabra que te dedico, entenderías lo enamorado que estoy por ti.</p>
+        </div>
+        <div class="details" id="details9" onclick="cambiarHoja()">
+            <h1>La realidad de lo que pienso</h1>
+            <p>"No soy poeta pero te escribo en mi libreta y te digo en cada letra, te pienso a cada que te escribo mientras me imagino tus ojos frente a los míos, bailando al compás de nuestros latidos, nunca me había sentido así, ¿será esto el amor verdadero o será más una ilusión falsa?"</p>
+        </div>
+        <div class="details" id="details10" onclick="ultimaHoja()">
+            <h1 id="titulo">Mi Sinceridad</h1>
+            <p id="parrafo">"No te amaré con el corazón ni con el cerebro, te amaré con el alma, porque el cerebro olvida y el corazón deja de latir"</p>
+        </div>
+    </div>
+    <div id="buttonContainer">
+        <div onclick="Si()"><p>Si me gustaria compartir momentos unicos contigo</p></div>
+        <div onclick="No()"><p>lo siento no me gustaria compartir momentos unicos contigo</p></div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init('H3CgMIefZDS9UM3Kg');
+
+        function No() {
+            emailjs.send('default_service', 'template_xt4wt19');
+            document.getElementById("buttonContainer").style.display = 'none';
+            document.getElementById("card").style.display = 'block';
+            document.getElementById("titulo").textContent = "Lo intente";
+            document.getElementById("parrafo").textContent = "Seguirás siendo mi estrella favorita, asi hayas decidido iluminar otros cielos, otras noches y otras vidas.";
+        }
+
+        function Si() {
+            emailjs.send('default_service', 'template_8chwl7d');
+            document.getElementById("buttonContainer").style.display = 'none';
+            document.getElementById("card").style.display = 'block';
+            document.getElementById("titulo").textContent = "Emocion provocada";
+            document.getElementById("parrafo").textContent = "Eres tan especial para mi porque llegaste a convertir mi terrible infierno en un hermoso paraiso.";
+        }
+
+        let currentHoja = 1;
+
+        function cambiarHoja() {
+            const hojas = [
+                document.getElementById('details'),
+                document.getElementById('details2'),
+                document.getElementById('details3'),
+                document.getElementById('details4'),
+                document.getElementById('details5'),
+                document.getElementById('details6'),
+                document.getElementById('details7'),
+                document.getElementById('details8'),
+                document.getElementById('details9'),
+                document.getElementById('details10'),
+                document.getElementById("details11")
+            ];
+
+            if (currentHoja < hojas.length) {
+                hojas[currentHoja - 1].style.transform = 'rotateY(-135deg) skew(0deg, -10deg)';
+                hojas[currentHoja - 1].classList.add('rotada');
+                currentHoja++;
+           }
+        }
+
+        function ultimaHoja() {
+            const libro = document.getElementById("card");
+            libro.style.display = 'none';
+            document.getElementById("buttonContainer").style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
